@@ -4,14 +4,11 @@ import dynamic from 'next/dynamic';
 const MonacoEditor = dynamic(() => import('react-monaco-editor'), { ssr: false });
 
 const Editor = ({ value, onChange, editorDidMount }) => {
-    const handleEditorDidMount = (editor) => {
-        window.monacoEditor = editor;
-        const monaco = window.monaco || window.require('monaco-editor');
-        if (monaco) {
-            monacoInstance = monaco;
-            console.log("Monaco instance successfully set");
-        } else {
-            console.error("Monaco instance could not be found");
+    const handleEditorDidMount = (editor, monaco) => {
+        console.log("Monaco Editor Mounted"); // Debugging log
+        window.monacoEditor = editor; // Set the editor instance on the window object
+        if (editorDidMount) {
+            editorDidMount(editor, monaco);
         }
     };
 
