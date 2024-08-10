@@ -31,3 +31,21 @@ body {
     text-wrap: balance;
   }
 }
+
+
+button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: 1px solid #ddd;
+  background-color: #f6f8fa;
+  cursor: pointer;
+  color: #000;
+}
+
+button:hover {
+  background-color: #e1e4e8;
+}
+
+button:active {
+  background-color: #d1d5da;
+}
